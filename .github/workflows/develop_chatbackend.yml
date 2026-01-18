@@ -21,7 +21,7 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
-          node-version: '20.x'
+          node-version: '22.x'
 
       - name: npm install, build, and test
         run: |
@@ -51,9 +51,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_EB8742131F564970B8366AFE94E96559 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_D7DB74B4931C4FFDB05AC2F61184A522 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_666FA51AC1FB41D4A7FAFF39F640D22C }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_1AABB62BBCBA46168D9E7A4E2BAB29ED }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_B8B36C6CF57E4F7EAE4A8F8FA0F0C8FF }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_DD61A703E20747DD9C6BBF5B9AD9B1F3 }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
@@ -62,5 +62,4 @@ jobs:
           app-name: 'chatBackend'
           slot-name: 'Production'
           package: .
-
           
