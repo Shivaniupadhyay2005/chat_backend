@@ -10,8 +10,9 @@ const router = require('./router');
 const app = express();
 const server = http.createServer(app);
 
+let io;
 try {
-  const io = socketio(server, {
+  io = socketio(server, {
     cors: {
       origin: "*"
     }
