@@ -9,11 +9,16 @@ const router = require('./router');
 
 const app = express();
 const server = http.createServer(app);
-const io = socketio(server, {
-  cors: {
-    origin: "*"
-  }
-});
+
+try {
+  const io = socketio(server, {
+    cors: {
+      origin: "*"
+    }
+  });
+} catch (error) {
+  console.error('Socket.io initialization error:', error);
+}
 
 app.use(cors());
 app.use(router);
